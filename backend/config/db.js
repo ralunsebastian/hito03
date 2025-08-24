@@ -1,4 +1,5 @@
 // config/db.js
+/*
 import pkg from 'pg';
 import dotenv from 'dotenv';
 
@@ -20,4 +21,24 @@ pool.connect()
 // Helper para simplificar consultas
 export const q = (text, params) => pool.query(text, params);
 
+export default pool;*/
+
+
+// config/db.js
+import pkg from 'pg';
+const { Pool } = pkg;
+
+export const pool = new Pool({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+});
+
+
 export default pool;
+
+pool.connect()
+  .then(() => console.log('✅ Conectado a PostgreSQL'))
+  .catch(err => console.error('❌ Error de conexión a PostgreSQL', err));

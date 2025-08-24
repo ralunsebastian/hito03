@@ -174,6 +174,36 @@ VALUES
 ON CONFLICT (email) DO NOTHING;
 
 -- ------------------ PAQUETES TURÍSTICOS ------------------
+INSERT INTO packages (title, description, destination, price, duration_days, max_participants, image_url, rating, category, start_date, end_date, organizer_id, is_featured)
+VALUES 
+('Aventura en la Patagonia', 'Explora los glaciares y lagos de la Patagonia chilena en esta experiencia única.', 'Patagonia', 1200.00, 7, 15, 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21', 4.8, 'adventure', '2025-12-01', '2025-12-07', 4, TRUE)
+ON CONFLICT DO NOTHING;
+
+INSERT INTO packages (title, description, destination, price, duration_days, max_participants, image_url, rating, category, start_date, end_date, organizer_id, is_featured)
+VALUES 
+('Tour Gastronómico en Santiago', 'Descubre los mejores restaurantes y mercados de Santiago en un tour de sabores inolvidable.', 'Santiago', 350.00, 2, 20, 'https://images.unsplash.com/photo-1551218808-94e220e084d2', 4.5, 'gastronomic', '2025-09-15', '2025-09-16', 4, FALSE)
+ON CONFLICT DO NOTHING;
+
+INSERT INTO packages (title, description, destination, price, duration_days, max_participants, image_url, rating, category, start_date, end_date, organizer_id, is_featured)
+VALUES 
+('Relax en Isla de Pascua', 'Disfruta de la playa, cultura y paisajes volcánicos de Rapa Nui.', 'Isla de Pascua', 1800.00, 5, 10, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', 4.9, 'beach', '2025-11-01', '2025-11-05', 4, TRUE)
+ON CONFLICT DO NOTHING;
+
+INSERT INTO packages (title, description, destination, price, duration_days, max_participants, image_url, rating, category, start_date, end_date, organizer_id, is_featured)
+VALUES 
+('Romántico Valle del Elqui', 'Escapada romántica con catas de vino y observación de estrellas en el Valle del Elqui.', 'Valle del Elqui', 600.00, 3, 8, 'https://www.gochile.cl/fotos/full/109901-istock-622296734.jpg', 4.7, 'romantic', '2025-10-10', '2025-10-12', 4, TRUE)
+ON CONFLICT DO NOTHING;
+
+INSERT INTO packages (title, description, destination, price, duration_days, max_participants, image_url, rating, category, start_date, end_date, organizer_id, is_featured)
+VALUES 
+('Cultural en Valparaíso', 'Tour cultural visitando murales, museos y arquitectura histórica en Valparaíso.', 'Valparaíso', 400.00, 2, 25, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fc/b7/valparaiso.jpg?w=1200&h=700&s=1', 4.6, 'cultural', '2025-08-20', '2025-08-21', 4, FALSE)
+ON CONFLICT DO NOTHING;
+
+select * from users;
+select * from bookings;
+select * from packages limit 20;
+delete from packages where id = 5;
+
 INSERT INTO packages (
     title, description, destination, price, duration_days, max_participants, image_url, rating, category, start_date, end_date, organizer_id, is_featured
 ) VALUES
@@ -185,3 +215,4 @@ INSERT INTO packages (
 ('Gita a Milano', 'Test descrizione', 'Milano', 298.00, 3, 15, 'https://d1bvpoagx8hqbg.cloudfront.net/originals/milano-italy-4da6d7a72988edff88100b42c937c9e6.jpg', 0.00, 'adventure', '2026-01-25', '2026-01-25', 1, FALSE),
 ('Patagonia', 'Una gita in Chile', 'Torres del Paine', 2500.00, 3, 19, 'https://cdn.audleytravel.com/4214/3010/79/8000816-torres-del-paine-chile.jpg', 0.00, 'adventure', '2025-08-25', '2025-08-31', 1, FALSE)
 ON CONFLICT DO NOTHING;
+
